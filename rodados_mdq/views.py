@@ -11,3 +11,12 @@ def saludo(request):
         context=contexto,
     )
     return http_response
+
+def sobre_mi(request):
+    contexto = {}
+    http_response = render(
+        request=request,
+        template_name='blog_rodados/sobre_mi.html',
+        context=contexto,
+    )
+    return http_response
