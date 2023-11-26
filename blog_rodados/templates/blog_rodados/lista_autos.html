@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Rodados MDQ - Autos</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h1 style="color:blue;">
+  Bienvenido!
+</h1>
+
+<h3>Autos disponibles:</h3>
+<ul>
+{% for compacto in compactos %}
+  <li>
+    {{ compacto.modelo }}, {{ compacto.anio  }}
+  </li>
+{% endfor %}
+</ul>
+{% endblock contenido %}
