@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Rodados MDQ - Sobre Mi</title>
+{% endblock titulo %}
+
+
+{% block contenido %}
+<h1 style="color:blue;">
+    Nuestros modelos: 
+</h1>
+
+<br>
+<a href="{% url 'auto_compacto' %}">Ver nuestros compactos</a>
+
+<br>
+<a href="{% url 'auto_sedan' %}">Ver nuestros sedanes</a>
+
+<br>
+<a href="{% url 'auto_suv' %}">Ver nuestras SUV</a>
+
+<br>
+<a href="{% url 'auto_pickup' %}">Ver nuestras Pick Ups</a>
+
+{% endblock contenido %}

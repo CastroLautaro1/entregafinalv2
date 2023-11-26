@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Rodados MDQ - Compactos</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h1 style="color:blue;">
+  Bienvenido!
+</h1>
+
+<h3>Nuestros compactos disponibles:</h3>
+<ul>
+{% for compactos in compacto %}
+  <li>
+    {{ compactos.modelo }}, {{ compactos.anio  }}
+  </li>
+{% endfor %}
+</ul>
+{% endblock contenido %}
+
+
+

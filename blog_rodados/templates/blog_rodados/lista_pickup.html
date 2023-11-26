@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-<title>Rodados MDQ - Autos</title>
+<title>Rodados MDQ - Pick Up</title>
 {% endblock titulo %}
 
 {% block contenido %}
@@ -9,11 +9,11 @@
   Bienvenido!
 </h1>
 
-<h3>Nuestros compactos disponibles:</h3>
+<h3>Nuestras Pick Up disponibles:</h3>
 <ul>
-{% for compactos in compacto %}
+{% for pickups in pickup %}
   <li>
-    {{ compactos.modelo }}, {{ compactos.anio  }}
+    {{ pickups.modelo }}, {{ pickups.anio  }}
   </li>
 {% endfor %}
 </ul>
