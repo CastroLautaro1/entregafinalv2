@@ -6,15 +6,25 @@
 
 {% block contenido %}
 <h1 style="color:blue;">
-  Bienvenido!
+    Nuestras Pick Up disponibles:
 </h1>
 
-<h3>Nuestras Pick Up disponibles:</h3>
-<ul>
-{% for pickups in pickup %}
-  <li>
-    {{ pickups.modelo }}, {{ pickups.anio  }}
-  </li>
-{% endfor %}
-</ul>
-{% endblock contenido %}
+<table class="table">
+    <tbody>
+      <tr>
+        <th>ID</th>
+        <th>Modelo</th>
+        <th>Año</th>
+        <th></th>
+        <th></th>
+      </tr>
+      {% for pickups in pickup %}
+      <tr>
+        <td>{{ pickups.id }}</td>
+        <td>{{ pickups.modelo }}</td>
+        <td>{{ pickups.anio }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endblock contenido %}

@@ -6,15 +6,25 @@
 
 {% block contenido %}
 <h1 style="color:blue;">
-  Bienvenido!
+    Nuestros sedanes disponibles:
 </h1>
 
-<h3>Nuestros sedanes disponibles:</h3>
-<ul>
-{% for sedans in sedan %}
-  <li>
-    {{ sedans.modelo }}, {{ sedans.anio  }}
-  </li>
-{% endfor %}
-</ul>
-{% endblock contenido %}
+<table class="table">
+    <tbody>
+      <tr>
+        <th>ID</th>
+        <th>Modelo</th>
+        <th>Año</th>
+        <th></th>
+        <th></th>
+      </tr>
+      {% for sedans in sedan %}
+      <tr>
+        <td>{{ sedans.id }}</td>
+        <td>{{ sedans.modelo }}</td>
+        <td>{{ sedans.anio }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endblock contenido %}

@@ -6,17 +6,27 @@
 
 {% block contenido %}
 <h1 style="color:blue;">
-  Bienvenido!
+  Nuestros compactos disponibles:
 </h1>
 
-<h3>Nuestros compactos disponibles:</h3>
-<ul>
-{% for compactos in compacto %}
-  <li>
-    {{ compactos.modelo }}, {{ compactos.anio  }}
-  </li>
-{% endfor %}
-</ul>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <th>Modelo</th>
+      <th>Año</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for compactos in compacto %}
+    <tr>
+      <td>{{ compactos.id }}</td>
+      <td>{{ compactos.modelo }}</td>
+      <td>{{ compactos.anio }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock contenido %}
 
 
