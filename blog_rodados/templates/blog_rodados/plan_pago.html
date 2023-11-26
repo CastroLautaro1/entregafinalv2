@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Rodados MDQ - Disponibles</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h1 style="color:blue;">
+  Nuestros autos en venta:
+</h1>
+
+<table class="table">
+    <tbody>
+      <tr>
+        <th>ID</th>
+        <th>Modelo</th>
+        <th>Novedad</th>
+        <th>Cuotas y financiacion</th>
+        <th></th>
+      </tr>
+      {% for articulos in articulo %}
+      <tr>
+        <td>{{ articulos.id }}</td>
+        <td>{{ articulos.titulo }}</td>
+        <td>{{ articulos.subtitulo }}</td>
+        <td>{{ articulos.cuerpo }}</td>
+        <td><a href="{% url 'auto_pickup' %}">Lo Quiero!</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endblock contenido %}

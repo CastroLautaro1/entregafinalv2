@@ -23,6 +23,14 @@
       <td>{{ compactos.id }}</td>
       <td>{{ compactos.modelo }}</td>
       <td>{{ compactos.anio }}</td>
+      <td><a href="{% url 'editar_compacto' compactos.id %}">Editar compacto</a></td>
+      <td>
+        <form action="{% url 'eliminar_compacto' compactos.id %}" method="post">
+          {% csrf_token %}
+          <input type="submit" value="eliminar"/>
+        </form>
+      </td>
+ 
     </tr>
     {% endfor %}
   </tbody>

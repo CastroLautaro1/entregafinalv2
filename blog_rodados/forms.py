@@ -1,5 +1,5 @@
 from django import forms
 
-class AutoFormulario(forms.Form):
+class UserFormulario(forms.Form):
     modelo = forms.CharField(required=True, max_length=64)
-    año = forms.IntegerField(required=True, max_value=80000)
+    anio = forms.IntegerField(required=True, max_value=80000)
