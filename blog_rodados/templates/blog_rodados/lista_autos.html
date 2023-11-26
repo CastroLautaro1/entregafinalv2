@@ -9,11 +9,11 @@
   Bienvenido!
 </h1>
 
-<h3>Autos disponibles:</h3>
+<h3>Nuestros compactos disponibles:</h3>
 <ul>
-{% for compacto in compactos %}
+{% for compactos in compacto %}
   <li>
-    {{ compacto.modelo }}, {{ compacto.anio  }}
+    {{ compactos.modelo }}, {{ compactos.anio  }}
   </li>
 {% endfor %}
 </ul>

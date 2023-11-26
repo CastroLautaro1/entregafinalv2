@@ -7,7 +7,7 @@ from blog_rodados.models import Articulo, Compacto, SUV, Sedan, PickUp
 
 # Create your views here.
 
-def listar_autos(request):
+def listar_compactos(request):
     contexto = {
         "compacto": Compacto.objects.all(),
     }
@@ -15,16 +15,5 @@ def listar_autos(request):
         request=request,
         template_name='blog_rodados/lista_autos.html',
         context=contexto,
-    )
-    return http_response
-
-def probando(request):
-    contexto = {
-        "sedan": Sedan.objects.all()
-    }
-    http_response = render (
-        request=request,
-        template_name='blog_rodados/probando.html',
-        context=contexto
     )
     return http_response
