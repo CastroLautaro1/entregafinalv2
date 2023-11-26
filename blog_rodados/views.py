@@ -17,3 +17,4 @@ def listar_compactos(request):
         context=contexto,
     )
     return http_response
+
