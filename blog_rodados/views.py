@@ -73,6 +73,7 @@ def listar_articulos(request):
     )
     return http_response
 
+@login_required
 def agregar_compacto(request, id):
    compacto = Compacto.objects.get(id=id)
    if request.method == "POST":
@@ -97,11 +98,62 @@ def agregar_compacto(request, id):
        context={'formulario': formulario},
    )
 
+@login_required
 def eliminar_compacto(request, id):
    compacto = Compacto.objects.get(id=id)
    if request.method == "POST":
        compacto.delete()
        url_exitosa = reverse('auto_compacto')
        return redirect(url_exitosa)
+
+@login_required   
+def crear_compacto(request):
+    if request.method == "POST":
+        # Guardado de datos
+        # Creo un objeto formulario con la data que envio el usuario
+        formulario = UserFormulario(request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data  # es un diccionario
+            modelo = data["modelo"]
+            anio = data["anio"]
+            # creo un curso en memoria RAM
+            compacto = Compacto(modelo=modelo, anio=anio)
+            # Lo guardan en la Base de datos
+            compacto.save()
+
+            # Redirecciono al usuario a la lista de cursos
+            url_exitosa = reverse('auto_compacto')  # estudios/cursos/
+            return redirect(url_exitosa)
+    else:  # GET
+        # Descargar formulario inicial
+        formulario = UserFormulario()
+    http_response = render(
+        request=request,
+        template_name='blog_rodados/crear_compacto.html',
+        context={'formulario': formulario}
+    )
+    return http_response
+
+def buscar_compacto(request):
+    if request.method == "POST":
+        data = request.POST
+        busqueda = data["busqueda"]
+        # Filtro simple
+        # cursos = Curso.objects.filter(comision__contains=busqueda)
+        # Ejemplo filtro avanzado
+        compacto = Compacto.objects.filter(
+            Q(modelo__icontains=busqueda) | Q(anio__contains=busqueda)
+        )
+
+        contexto = {
+            "compacto": compacto,
+        }
+        http_response = render(
+            request=request,
+            template_name='blog_rodados/lista_compactos.html',
+            context=contexto,
+        )
+        return http_response
 
 

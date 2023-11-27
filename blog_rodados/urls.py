@@ -1,7 +1,7 @@
 from django.urls import path
 
 from blog_rodados.views import (listar_compactos, listar_sedanes, listar_suv, listar_pickup, modelos, 
-    listar_articulos, agregar_compacto, eliminar_compacto
+    listar_articulos, agregar_compacto, eliminar_compacto, crear_compacto, buscar_compacto
 )
 
 
@@ -15,5 +15,8 @@ urlpatterns = [
     path("pagos/", listar_articulos, name="pagos"),
     path("agregar_compacto/<int:id>/", agregar_compacto, name="editar_compacto"),
     path('eliminar-compacto/<int:id>/', eliminar_compacto, name="eliminar_compacto"),
+    path("crear-compacto/", crear_compacto , name="crear_compacto"),
+    path("buscar-compacto/", buscar_compacto, name="buscar_compacto"),
+
 
 ]
