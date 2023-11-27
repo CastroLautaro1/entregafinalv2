@@ -142,12 +142,12 @@ def buscar_compacto(request):
         # Filtro simple
         # cursos = Curso.objects.filter(comision__contains=busqueda)
         # Ejemplo filtro avanzado
-        compacto = Compacto.objects.filter(
+        compactos = Compacto.objects.filter(
             Q(modelo__icontains=busqueda) | Q(anio__contains=busqueda)
         )
 
         contexto = {
-            "compacto": compacto,
+            "compactos": compactos,
         }
         http_response = render(
             request=request,
