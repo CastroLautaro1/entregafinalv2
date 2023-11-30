@@ -7,9 +7,9 @@
 
 {% block contenido %}
 {% if user.is_authenticated %}
-<h1>Bienvenido/a {{ user.last_name }}, {{ user.first_name }}</h1>
+<h1>Bienvenido/a {{ user.last_name }}, {{ user.first_name }}!</h1>
 <div>
-  <img src="{{ user.avatar.imagen.url }}" style="max-width: 300px;">
+  <img src="{{ user.avatar.imagen.url }}" style="max-width: 500px;">
 </div>
 {% else %}
 <h1>Bienvenido/a visitante</h1>

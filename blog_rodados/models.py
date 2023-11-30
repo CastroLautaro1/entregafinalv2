@@ -9,6 +9,7 @@ class Articulo(models.Model):
     cuerpo = models.TextField()
     autor = models.CharField(max_length=32)
     fecha = models.DateTimeField(auto_now_add=True)
+    imagen = models.ImageField(upload_to='media/avatares/',  null=True, blank=True)
     
     def __str__(self):
         return f"{self.titulo}, {self.subtitulo}"

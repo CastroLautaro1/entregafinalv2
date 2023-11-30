@@ -24,6 +24,10 @@
         <td>{{ articulos.titulo }}</td>
         <td>{{ articulos.subtitulo }}</td>
         <td>{{ articulos.cuerpo }}</td>
+        <td>{% if articulos.imagen %}
+          <img src="{{ articulos.imagen.url }}" alt="Imagen del artículo" style="max-width: 300px;">
+            {% endif %}
+        </td>
         <td><a href="{% url 'auto_pickup' %}">Lo Quiero!</a></td>
       </tr>
       {% endfor %}
