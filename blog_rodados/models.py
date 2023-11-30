@@ -19,6 +19,7 @@ class Compacto(models.Model):
     marca = models.CharField(max_length=32)
     modelo = models.CharField(max_length=32)
     anio = models.IntegerField()
+    imagen = models.ImageField(upload_to='media/avatares/',  null=True, blank=True)
     
     def __str__(self):
         return f"{self.modelo} ({self.anio})"

@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
-{% block contenido %}
+{% block titulo %}
+<title>Llenar datos</title>
+{% endblock titulo %}
 
+{% block contenido %}
+<p>Tu username es <b>{{ object.username }}</b></p>
+
+<h3>Completar datos:</h3>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="Guardar" />
+  <input type="submit" value="Salvar"/>
 </form>
-
-<br>
-<a href="{% url 'lista_modelos' %}">Volver lista</a>
-
 {% endblock contenido %}

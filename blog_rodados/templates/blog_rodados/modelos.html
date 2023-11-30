@@ -6,24 +6,26 @@
 
 
 {% block contenido %}
-<h1>
+<h1 style="display:flex; justify-content: center;">
     Nuestros modelos: 
 </h1>
 
-<br>
+<div style="display:flex; justify-content: center;">
 <h2>
-<a href="{% url 'auto_compacto' %}">Ver nuestros compactos</a>
+    <li>
+        <a href="{% url 'auto_compacto' %}">Ver nuestros compactos</a>
+    </li>
+    <li>
+        <a href="{% url 'auto_sedan' %}">Ver nuestros sedanes</a>
+    </li>
+    <li>
+        <a href="{% url 'auto_suv' %}">Ver nuestras SUV</a>
+    </li>
+    <li>
+        <a href="{% url 'auto_pickup' %}">Ver nuestras Pick Ups</a>
+    </li>
 </h2>
-<br>
-<h2>
-<a href="{% url 'auto_sedan' %}">Ver nuestros sedanes</a>
-</h2>
-<br>
-<h2>
-<a href="{% url 'auto_suv' %}">Ver nuestras SUV</a>
-</h2>
-<br>
-<h2>
-<a href="{% url 'auto_pickup' %}">Ver nuestras Pick Ups</a>
-</h2>
+</div>
+
 {% endblock contenido %}
+
