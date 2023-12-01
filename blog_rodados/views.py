@@ -86,7 +86,7 @@ def agregar_compacto(request, id):
            compacto.save()
            url_exitosa = reverse('auto_compacto')
            return redirect(url_exitosa)
-   else:  # GET
+   else:  
        inicial = {
            'anio': compacto.anio,
            'anio': compacto.anio,
@@ -109,24 +109,18 @@ def eliminar_compacto(request, id):
 @login_required   
 def crear_compacto(request):
     if request.method == "POST":
-        # Guardado de datos
-        # Creo un objeto formulario con la data que envio el usuario
         formulario = UserFormulario(request.POST)
 
         if formulario.is_valid():
-            data = formulario.cleaned_data  # es un diccionario
+            data = formulario.cleaned_data  
             modelo = data["modelo"]
             anio = data["anio"]
-            # creo un curso en memoria RAM
             compacto = Compacto(modelo=modelo, anio=anio)
-            # Lo guardan en la Base de datos
             compacto.save()
 
-            # Redirecciono al usuario a la lista de cursos
-            url_exitosa = reverse('auto_compacto')  # estudios/cursos/
+            url_exitosa = reverse('auto_compacto')  
             return redirect(url_exitosa)
-    else:  # GET
-        # Descargar formulario inicial
+    else:  
         formulario = UserFormulario()
     http_response = render(
         request=request,
@@ -139,9 +133,6 @@ def buscar_compacto(request):
     if request.method == "POST":
         data = request.POST
         busqueda = data["busqueda"]
-        # Filtro simple
-        # cursos = Curso.objects.filter(comision__contains=busqueda)
-        # Ejemplo filtro avanzado
         compactos = Compacto.objects.filter(
             Q(modelo__icontains=busqueda) | Q(anio__contains=busqueda)
         )
