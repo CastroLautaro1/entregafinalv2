@@ -25,7 +25,25 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'lista_modelos' %}">Modelos</a>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="navbar-brand" href="{% url 'lista_modelos' %}">Modelos</a>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a class="dropdown-item" href="{% url 'auto_compacto' %}">Compactos</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'auto_sedan' %}">Sedanes</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'auto_suv' %}">SUV</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'auto_pickup' %}">Pick Up</a>
+                        </li>
+                    </ul>
+                </div>
                 <a class="navbar-brand" href="{% url 'pagos' %}">Planes de pago</a>
                 <a class="navbar-brand" href="{% url 'about' %}">Sobre mi</a>
                 {% if user.is_authenticated %}

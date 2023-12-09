@@ -21,14 +21,18 @@
       {% for articulos in articulo %}
       <tr>
         <td>{{ articulos.id }}</td>
-        <td>{{ articulos.titulo }}</td>
+        <td><h4>{{ articulos.titulo }}</h4></td>
         <td>{{ articulos.subtitulo }}</td>
         <td>{{ articulos.cuerpo }}</td>
         <td>{% if articulos.imagen %}
-          <img src="{{ articulos.imagen.url }}" alt="Imagen del artículo" style="max-width: 300px;">
+          <img src="{{ articulos.imagen.url }}" alt="Imagen del artículo" style="max-width: 300px; border-radius:20px">
             {% endif %}
         </td>
-        <td><a href="{% url 'inicio' %}">Lo Quiero!</a></td>
+        <td>
+          <button class="btn btn-primary"
+          <a href="{% url 'inicio' %}">Lo Quiero!</a>
+          </button>
+        </td>
       </tr>
       {% endfor %}
     </tbody>

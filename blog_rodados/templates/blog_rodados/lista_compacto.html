@@ -30,10 +30,10 @@
     {% for compactos in compacto %}
     <tr>
       <td>{{ compactos.id }}</td>
-      <td>{{ compactos.modelo }}</td>
-      <td>{{ compactos.anio }}</td>
+      <td><h4>{{ compactos.modelo }}</h4></td>
+      <td><h4>{{ compactos.anio }}</h4></td>
       <td>{% if compactos.imagen %}
-        <img src="{{ compactos.imagen.url }}" alt="Imagen del artículo" style="max-width: 300px;">
+        <img src="{{ compactos.imagen.url }}" alt="Imagen del artículo" style="max-width: 300px; border-radius:20px">
           {% endif %}
       </td>
       <td><a href="{% url 'editar_compacto' compactos.id %}">Editar compacto</a></td>

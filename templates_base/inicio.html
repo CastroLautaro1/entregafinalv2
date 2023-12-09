@@ -9,7 +9,7 @@
 {% if user.is_authenticated %}
 <h1 style="display:flex; justify-content: center; font-size: 5em;" >Bienvenido/a {{ user.last_name }}, {{ user.first_name }}!</h1>
 <div style="display:flex; justify-content: center;">
-  <img src="{{ user.avatar.imagen.url }}" style="max-width: 600px; margin:25px">
+  <img src="{{ user.avatar.imagen.url }}" style="max-width: 600px; margin:25px; border-radius: 20px;">
 </div>
 {% else %}
 <h1>Bienvenido/a visitante</h1>
